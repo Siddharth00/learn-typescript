@@ -10,7 +10,7 @@ function add3DCoordinate(c1: ThreeDCoordinate, c2: ThreeDCoordinate): ThreeDCoor
 
 console.log(add3DCoordinate([1, 2, 3], [4, 5, 6]));
 
-function useState(initial: string): [() => string, (v: string) => void] {
+function simpleStateString(initial: string): [() => string, (v: string) => void] {
     let str: string = initial;
     return [
         () => str,
@@ -20,7 +20,7 @@ function useState(initial: string): [() => string, (v: string) => void] {
     ]
 }
 
-const [myName, setMyName] = useState("Sid");
+const [myName, setMyName] = simpleStateString("Sid");
 console.log(myName());
 setMyName("Siddharth");
 console.log(myName());
